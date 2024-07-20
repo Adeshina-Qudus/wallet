@@ -4,9 +4,12 @@ import com.semicolon.wallet.dtos.request.CreateWalletRequest;
 import com.semicolon.wallet.dtos.request.FundWalletRequest;
 import com.semicolon.wallet.dtos.request.InitializeTransactionRequest;
 import com.semicolon.wallet.dtos.response.CreateWalletResponse;
+import com.semicolon.wallet.dtos.response.FundWalletResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -32,7 +35,11 @@ public class WalletServiceTest {
     @Test
     void fundWalletTest(){
         FundWalletRequest fundWalletRequest = new FundWalletRequest();
-
+        fundWalletRequest.setAmount(BigDecimal.valueOf(2000));
+        fundWalletRequest.setEmail("qudusa55@gmail.com");
+        fundWalletRequest.setDescription("Owo Sara");
+        FundWalletResponse response = walletService.fundWallet(fundWalletRequest);
+        assertThat(response).isNotNull();
     }
 
 }

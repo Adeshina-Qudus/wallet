@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 public class InitializeTransactionResponse {
 
-
-    private String url;
-    private String ref;
+    private boolean status;
+    private PaystackTransactionDetails data;
 }
