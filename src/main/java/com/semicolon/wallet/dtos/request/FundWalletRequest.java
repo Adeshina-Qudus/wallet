@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Getter
 public class FundWalletRequest {
 
-    private String email;
+    private String accountNumber;
     private BigDecimal amount;
     private String description;
 

@@ -28,7 +28,6 @@ public class PaystackServiceTest {
         InitializeTransactionResponse response =
                 paystackService.initializeTransaction(initializeTransactionRequest);
         assertThat(response).isNotNull();
-
     }
 
 }

@@ -7,4 +7,6 @@ import com.semicolon.wallet.exceptions.UserAlreadyExistException;
 
 public interface UserService {
     User createProfile(CreateWalletRequest request) throws UserAlreadyExistException, NumberParseException;
+
+    User findUser(String accountNumber);
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Setter
 @Getter
@@ -14,8 +16,7 @@ public class Wallet {
     private Long id;
     private String accountName;
     private String accountNumber;
-    private String accountBalance;
-    private String pin;
+    private BigDecimal accountBalance;
     @OneToOne
     private User user;
 

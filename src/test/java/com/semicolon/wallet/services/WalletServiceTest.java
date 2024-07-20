@@ -2,7 +2,6 @@ package com.semicolon.wallet.services;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.semicolon.wallet.dtos.request.CreateWalletRequest;
 import com.semicolon.wallet.dtos.request.FundWalletRequest;
-import com.semicolon.wallet.dtos.request.InitializeTransactionRequest;
 import com.semicolon.wallet.dtos.response.CreateWalletResponse;
 import com.semicolon.wallet.dtos.response.FundWalletResponse;
 import org.junit.jupiter.api.Test;
@@ -24,10 +23,10 @@ public class WalletServiceTest {
     @Test
     void createWalletAccountTest() throws NumberParseException {
         CreateWalletRequest request = new CreateWalletRequest();
-        request.setEmail("qudusa55@gmail.com");
+        request.setEmail("alimotadeshina03@gmail.com");
         request.setFirstName("Qudus");
         request.setLastName("Adeshina");
-        request.setPhoneNumber("09079447913");
+        request.setPhoneNumber("08135347913");
         CreateWalletResponse response = walletService.createAccount(request);
         assertThat(response).isNotNull();
     }
@@ -36,7 +35,7 @@ public class WalletServiceTest {
     void fundWalletTest(){
         FundWalletRequest fundWalletRequest = new FundWalletRequest();
         fundWalletRequest.setAmount(BigDecimal.valueOf(2000));
-        fundWalletRequest.setEmail("qudusa55@gmail.com");
+        fundWalletRequest.setAccountNumber("08135347913");
         fundWalletRequest.setDescription("Owo Sara");
         FundWalletResponse response = walletService.fundWallet(fundWalletRequest);
         assertThat(response).isNotNull();

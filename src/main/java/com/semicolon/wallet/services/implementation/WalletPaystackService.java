@@ -20,8 +20,6 @@ public class WalletPaystackService implements PaystackService {
 
     @Autowired
     private BeanConfig beanConfig;
-    @Autowired
-    private WalletService walletService;
 
     @Override
     public InitializeTransactionResponse initializeTransaction(InitializeTransactionRequest
@@ -31,6 +29,7 @@ public class WalletPaystackService implements PaystackService {
         ResponseEntity<InitializeTransactionResponse> response = restTemplate.postForEntity(
                 beanConfig.getPaystackInitializeUrl(),
                 transactionRequest, InitializeTransactionResponse.class);
+        System.out.println(response.getBody().getData().getAuthorizationUrl());
         return response.getBody();
     }
 

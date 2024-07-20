@@ -32,6 +32,11 @@ public class WalletUserService implements UserService {
         return user;
     }
 
+    @Override
+    public User findUser(String accountNumber) {
+        return userRepository.findUserByPhoneNumber(accountNumber);
+    }
+
     private boolean userExist(String email) {
         return userRepository.findUserByEmail(email).isPresent();
     }

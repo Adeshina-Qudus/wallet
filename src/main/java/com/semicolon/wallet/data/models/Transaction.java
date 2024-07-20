@@ -16,7 +16,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String userId;
+    private Long userId;
     private BigDecimal amount;
     private String description;
     private Status status = Status.PROCESSING;
