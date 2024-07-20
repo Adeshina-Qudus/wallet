@@ -15,6 +15,7 @@ public class Wallet {
     private String accountName;
     private String accountNumber;
     private String accountBalance;
+    private String pin;
     @OneToOne
     private User user;
 

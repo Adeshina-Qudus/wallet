@@ -1,5 +1,7 @@
 package com.semicolon.wallet.services;
+import com.google.i18n.phonenumbers.NumberParseException;
 import com.semicolon.wallet.dtos.request.CreateWalletRequest;
+import com.semicolon.wallet.dtos.request.InitializeTransactionRequest;
 import com.semicolon.wallet.dtos.response.CreateWalletResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,7 @@ public class WalletServiceTest {
 
 
     @Test
-    void createWalletAccountTest(){
-
+    void createWalletAccountTest() throws NumberParseException {
         CreateWalletRequest request = new CreateWalletRequest();
         request.setEmail("qudusa55@gmail.com");
         request.setFirstName("Qudus");
@@ -26,5 +27,6 @@ public class WalletServiceTest {
         CreateWalletResponse response = walletService.createAccount(request);
         assertThat(response).isNotNull();
     }
+
 
 }

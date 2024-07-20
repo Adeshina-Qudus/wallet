@@ -21,7 +21,8 @@ public class WalletServiceImpl implements WalletService {
     @Override
     public CreateWalletResponse createAccount(CreateWalletRequest request) throws NumberParseException {
         User user = userService.createProfile(request);
-
-        return null;
+        CreateWalletResponse response = new CreateWalletResponse();
+        response.setAccountNumber(user.getPhoneNumber());
+        return response;
     }
 }
