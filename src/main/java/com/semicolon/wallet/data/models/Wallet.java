@@ -17,6 +17,5 @@ public class Wallet {
     private String accountBalance;
     @OneToOne
     private User user;
-    @OneToMany
-    private Transaction transaction;
+
 }
