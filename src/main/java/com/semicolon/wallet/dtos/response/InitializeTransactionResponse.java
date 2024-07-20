@@ -9,4 +9,6 @@ import lombok.Setter;
 public class InitializeTransactionResponse {
 
 
+    private String url;
+    private String ref;
 }

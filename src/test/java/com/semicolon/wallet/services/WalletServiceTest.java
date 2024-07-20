@@ -1,6 +1,7 @@
 package com.semicolon.wallet.services;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.semicolon.wallet.dtos.request.CreateWalletRequest;
+import com.semicolon.wallet.dtos.request.FundWalletRequest;
 import com.semicolon.wallet.dtos.request.InitializeTransactionRequest;
 import com.semicolon.wallet.dtos.response.CreateWalletResponse;
 import org.junit.jupiter.api.Test;
@@ -28,5 +29,10 @@ public class WalletServiceTest {
         assertThat(response).isNotNull();
     }
 
+    @Test
+    void fundWalletTest(){
+        FundWalletRequest fundWalletRequest = new FundWalletRequest();
+
+    }
 
 }
